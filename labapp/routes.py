@@ -14,19 +14,15 @@ from . import controller    # подключаем controller.py
 # Обработка запроса к индексной странице
 @app.route('/')
 @app.route('/index')
-def index():
-    imgs = ['img1.jpg', 'img2.jpg']
-    subjs = ["SUBJ_1", "SUBJ_2", "SUBJ_3", "SUBJ_4", "SUBJ_5"]
-    # Пример вызова метода с выборкой данных из БД и вставка полученных данных в html-шаблон
+def index():    
     processed_files = controller.get_source_files_list()
     # "рендеринг" (т.е. вставка динамически изменяемых данных) в index.html и возвращение готовой страницы
-    return render_template('index.html', title='Whitesquare', pname='HOME', navmenu=controller.navmenu,
-                           imgs=imgs, subjs=subjs, processed_files=processed_files)
-
+    return render_template('index.html', title='Выбор фильма.', pname='HOME', navmenu=controller.navmenu,
+                            processed_files=processed_files)
 # Обработка запроса к странице contact.html
 @app.route('/contact')
 def contact():
-    return render_template('contact.html', title='Whitesquare', pname='CONTACT', navmenu=controller.navmenu)
+    return render_template('contact.html', title='Фильмы', pname='О проекте', navmenu=controller.navmenu)
 
 # Пример обработки POST-запроса для демонстрации подхода AJAX
 @app.route('/api/contactrequest', methods=['POST'])

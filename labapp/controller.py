@@ -11,27 +11,12 @@ from .repository.sql_api import *                # подключаем API дл
 # оформленное в виде массива dict объектов
 navmenu = [
     {
-        'name': 'HOME',
-        'addr': '/'
+        'name': 'Главная',
+        'addr': '/index'
     },
+   
     {
-        'name': 'ABOUT US',
-        'addr': '#'
-    },
-    {
-        'name': 'SERVICES',
-        'addr': '#'
-    },
-    {
-        'name': 'PROJECTS',
-        'addr': '#'
-    },
-    {
-        'name': 'MEMBERS',
-        'addr': '#'
-    },
-    {
-        'name': 'CONTACT',
+        'name': 'О проекте',
         'addr': '/contact'
     },
 ]

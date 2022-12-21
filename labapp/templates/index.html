@@ -1,38 +1,186 @@
-{% extends "layout.html" %}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Фильмотека</title>
+    <link rel="stylesheet" href="C:/Users/Honor/source/repos/Laba6_PiCPO/labapp/static/stylesheets/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="/"><img src="C:/Users/Honor/source/repos/Laba6_PiCPO/labapp/static/images/twitter.png" alt="Whitesquare logo"></a>
+            <center>
+                <h1>Подбор фильма</h1>
+            </center>
+        </header>
+        <nav>
+            <center>
+                <a class="link1" href="index.html">Главная</a>
+                <a class="link1" href="contact.html">О проекте</a>
+            </center>
+        </nav>
+        <main>
+            <aside>
+                <h3>Жанр</h3>
+                <nav>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Боевик</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Приключение</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Мультфильм</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Криминал</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Драма</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Триллер</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Фэнтези</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Научная фантастика</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Исторический</div>
+                    </label>
+                </nav>
 
-{% block content %}
+                <h3>Страна</h3>
+                <nav>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">США</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Великобритания</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">Россия</div>
+                    </label>
+                </nav>
+                <h3>Год релиза</h3>
+                <nav>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">1950-1980</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">1980-2010</div>
+                    </label>
+                    <label class="checkbox style-e">
+                        <input type="checkbox" />
+                        <div class="checkbox__checkmark"></div>
+                        <div class="checkbox__body">2010+</div>
+                    </label>
+                </nav>
 
-    <aside>
-      <h2>SUBMENU</h2>
-      <nav>
-        <ul class="aside-menu">
-            {% for subj in subjs %}
-              <li><a href="#">{{subj}}</a></li>
-            {% endfor %}
-        </ul>
-      </nav>
-      <h2>INFO</h2>
-      <p><img src="/static/images/bg1.png" width="230" height="180" alt="Our offices"></p>
-    </aside>
-    <article>
-    <section>
-            {% for row in processed_files %}
-                <h2>
-                    Идентификатор: {{row[0]}}
-                </h2>
-                <h3>
-                    Имя: {{row[1]}}
-                </h3>
-                <p>
-                    Дата обработки: {{row[2]}}
-                </p>
-            {% endfor %}
-        </section>
-        <section>
-            {% for image in imgs %}
-                <figure><img src="/static/images/{{image}}" alt=""></figure>
-            {% endfor %}
-        </section>
-    </article>
+                <h3>Сортировать по</h3>
+                <nav>
 
-{% endblock %}
+                    <p><input type="submit" value=" Возрастанию года релиза "></p>
+                    <p><input type="submit" value="  Убыванию года релиза   "></p>
+                </nav>
+
+            </aside>
+            <article>
+                <section>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>ИД</th>
+                                <th>Название</th>
+                                <th>Жанр</th>
+                                <th>Год</th>
+                                <th>Страна</th>
+                                <th>Длительность</th>
+                                <th>Слоган</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Зелёная миля</td>
+                                <th>Драма</th>
+                                <th>1999</th>
+                                <td>США</td>
+                                <td>189</td>
+                                <td>Пол Эджкомб не верил в чудеса.Пока не столкнулся с одним из них.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Властелин колец.Возвращение короля</td>
+                                <th>Фэнтези</th>
+                                <td>Новая Зеландия</td>
+                                <td>2003</td>
+                                <td>201</td>
+                                <td>Не может быть триумфа без потерь.Никакой победы без страданий.Нет свободы без жертвы.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Тайна Коко</td>
+                                <th>Мультфильм</th>
+                                <td>США</td>
+                                <td>2017</td>
+                                <td>105</td>
+                                <td>Праздник всей жизни.</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>1+1</td>
+                                <th>Драма</th>
+                                <td>Франция</td>
+                                <td>2011</td>
+                                <td>112</td>
+                                <td>Иногда нужно попасть в чужой мир, чтобы узнать, чего не хватает вам в собственном.</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Криминальное чтиво</td>
+                                <th>Криминал</th>
+                                <td>США</td>
+                                <td>1994</td>
+                                <td>154</td>
+                                <td>То, что ты персонаж, не означает, что у тебя есть характер.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </section>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
